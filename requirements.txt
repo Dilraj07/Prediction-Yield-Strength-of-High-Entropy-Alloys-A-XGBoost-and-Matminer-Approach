@@ -2,4 +2,6 @@ pandas
 numpy
 scikit-learn
 xgboost
+streamlit 
 matminer
+joblib
