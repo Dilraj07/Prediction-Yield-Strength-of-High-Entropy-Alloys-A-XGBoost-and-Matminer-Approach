@@ -1,55 +1,56 @@
-# Yield Strength Prediction of High Entropy Alloys (HEAs)
+# Prediction of Yield Strength in High-Entropy Alloys (HEA)
+A Physics-Informed Machine Learning approach to predict mechanical properties of High-Entropy Alloys using Gradient Boosting and Domain Knowledge.
 
-This project utilizes machine learning (XGBoost) and physics-based feature engineering to predict the yield strength of High Entropy Alloys (HEAs) based on their chemical composition and processing conditions.
+## 🚀 HEA Discovery Engine (Streamlit App)
+This project includes a state-of-the-art interactive web application for material scientists to design and analyze new alloys.
 
-## Project Overview
+### Feature Highlights
+- **🧪 Alloy Composer**: Design new alloys and simulate their Yield Strength in real-time.
+- **⚙️ Processing Simulator**: Adjust Temperature, Grain Size, and Manufacturing Method to see property shifts.
+- **🧠 Explainable AI (SHAP)**: Understand *why* the model makes a prediction. Visualize the impact of Lattice Distortion (δ), VEC, and more.
+- **📊 Dataset Analytics**: Interactive dashboard to explore correlations and property distributions in the training data.
 
-High Entropy Alloys are a class of materials with superior mechanical properties. This tool helps researchers and material scientists predict the mechanical performance of new alloy compositions without expensive physical testing.
+![App Screenshot](https://via.placeholder.com/800x400?text=HEA+Discovery+Engine+Dashboard)
 
-### Key Features
-- **Physics-Informed Features**: Calculates Valency Electron Concentration (VEC), atomic radius difference ($\delta$), mixing entropy ($S_{mix}$), and electronegativity differences.
-- **Machine Learning Model**: Uses a Gradient Boosting Regressor (XGBoost equivalent) for high-accuracy predictions.
-- **Interactive Prediction**: Includes a CLI tool to input new alloy formulas and get instant yield strength estimates.
-- **Feature Importance Analysis**: Visualizes which physical properties drive the material strength.
+## 🛠️ Installation & Usage
 
-## Installation
-
-1. Clone the repository:
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/Dilraj07/Prediction-Yield-Strength-of-High-Entropy-Alloys-A-XGBoost-and-Matminer-Approach.git
    cd Prediction-Yield-Strength-of-High-Entropy-Alloys-A-XGBoost-and-Matminer-Approach
    ```
 
-2. Create a virtual environment (optional but recommended):
+2. **Set up Environment**
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   # Windows
+   .\venv\Scripts\activate
+   # Mac/Linux
+   source venv/bin/activate
    ```
 
-3. Install dependencies:
+3. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-## Usage
+4. **Run the App**
+   ```bash
+   streamlit run app.py
+   ```
 
-### 1. Train the Model and Predict
-Run the main script to train the model on the provided dataset (`MPEA_dataset.csv`) and start the interactive prediction session.
+## 📂 Project Structure
+- `app.py`: Main Streamlit application file.
+- `hea_prediction.py`: Core machine learning pipeline (Data Preprocessing, Feature Engineering, Model Training).
+- `requirements.txt`: Python dependencies.
+- `MPEA_dataset.csv`: Training dataset containing alloy compositions and properties.
 
-```bash
-python hea_prediction.py
-```
+## 🔬 Scientific Approach
+The model integrates physical parameters known to influence solid solution strengthening:
+- **Valence Electron Concentration (VEC)**: Predicts phase stability (FCC vs BCC).
+- **Atomic Size Mismatch (δ)**: Quantifies lattice distortion.
+- **Mixing Entropy (S_mix)**: Thermodynamics of multi-component systems.
+- **Processing History**: Accounts for grain size and heat treatment effects.
 
-### 2. Feature Importance
-The script automatically generates a `feature_importance.png` plot showing the most influential factors in determining yield strength.
-
-## Dataset
-The model is trained on `MPEA_dataset.csv`, which contains experimental data on various HEA compositions, processing methods, and measured yield strengths.
-
-## Dependencies
-- Python 3.8+
-- pandas
-- numpy
-- scikit-learn
-- matplotlib
-- seaborn
+## 🤝 Contributing
+Contributions are welcome! Please open an issue or submit a pull request for improvements.
